@@ -4,6 +4,14 @@ This project is an end-to-end machine learning prediction project that has been 
 
 ## Project Description 
 
+Both the police department and the “general public”  would make use of a software product that can give them an idea about the likelihood of fatal collisions that involve loss of life. 
+
+For the police department: 
+* Assist them in taking better measures of security and better planning for road conditions around certain neighborhoods. 
+
+For the public individuals:
+* Help them assess the need for additional precautions at certain times and weather conditions and neighborhoods.
+
 The aim of the project is to develop a model that can predict whether or not an individual is likely to default on their credit payments based on several input features. This project will include data cleaning, exploratory data analysis, feature engineering, model selection, and deployment with Flask and React UI.
 
 ## Technologies Used
