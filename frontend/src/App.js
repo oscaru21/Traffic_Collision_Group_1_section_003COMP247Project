@@ -1,7 +1,9 @@
+import Map from "./components/Map";
+
 function App() {
   return (
-    <div className="App">
-      hello
+    <div className="App" style={{ height: '100vh', width: '100vw' }}>
+      <Map />
     </div>
   );
 }
