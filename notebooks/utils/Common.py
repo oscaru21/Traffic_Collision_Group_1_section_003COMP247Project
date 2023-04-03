@@ -1,0 +1,7 @@
+
+class Config:
+    cat_attribs = ['VEHTYPE', 'ROAD_CLASS', 'LOCCOORD', 'DISTRICT', 'TRAFFCTL', 'LIGHT', 'RDSFCOND', 'VISIBILITY', 'INVTYPE', 'IMPACTYPE', 'INVAGE']
+    num_attribs = ['YEAR', 'TIME', 'LATITUDE', 'LONGITUDE', 'MONTH', 'DAY']
+    binary_columns = ['PEDESTRIAN', 'CYCLIST', 'AUTOMOBILE', 'MOTORCYCLE', 'TRUCK', 'TRSN_CITY_VEH', 'EMERG_VEH', 'PASSENGER', 'SPEEDING', 'AG_DRIV', 'REDLIGHT', 'ALCOHOL', 'DISABILITY']
+    label = 'ACCLASS'
+    test_size = 0.2
