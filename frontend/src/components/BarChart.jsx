@@ -45,7 +45,7 @@ const BarChart = ({ data }) => {
   };
 
   return (
-    <Paper elevation={4}>
+    <Paper elevation={4} sx={{ p: 2, display: 'flex', justifyContent: 'center' }}>
       <Bar data={info} options={options} />
     </Paper>
   );
