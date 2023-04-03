@@ -15,10 +15,24 @@ class DataPipeline:
         ])
         self.__num_columns = num_columns
         self.__cat_columns = cat_columns
+        self.__converted_columns = []
 
+    @property
+    def cat_pipeline(self):
+        return self.__cat_pipeline
+
+    @property
+    def num_pipeline(self):
+        return self.__num_columns
+
+    @property
+    def converted_columns(self):
+        return self.__converted_columns
+       
     def process(self, df: pd.DataFrame):
         ct = ColumnTransformer([('scaler', self.__num_pipeline, self.__num_columns),
                         ("cat", self.__cat_pipeline, self.__cat_columns)]
                         , remainder='passthrough')
-        
-        return pd.DataFrame(ct.fit_transform(df))
+        new_data = ct.fit_transform(df)
+        self.__converted_columns = ct.get_feature_names_out()
+        return pd.DataFrame(new_data)
