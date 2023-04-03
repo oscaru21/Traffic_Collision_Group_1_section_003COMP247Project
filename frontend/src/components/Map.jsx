@@ -7,8 +7,6 @@ const customIcon = L.icon({
     iconUrl: `${process.env.PUBLIC_URL}/marker-icon.png`,
     iconSize: [25, 41],
     iconAnchor: [12, 41],
-    popupAnchor: [1, -34],
-    tooltipAnchor: [16, -28],
   });
 
 function Map() {
@@ -31,7 +29,7 @@ function Map() {
         center={[43.6532, -79.3832]}
         zoom={13}
         scrollWheelZoom={true}
-        style={{ height: "100%", width: "100%" }}
+        style={{ height: "100%", width: "100%"}}
       >
         <MapClickEvents />
         <TileLayer
