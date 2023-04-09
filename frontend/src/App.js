@@ -1,14 +1,18 @@
-import Map from "./components/Map";
 import NavBar from "./components/NavBar";
-import Stats from "./pages/Stats";
+import { ModelProvider } from "./context/ModelContext";
+import Form from "./pages/Form";
 
 function App() {
   return (
-    <div className="App" style={{height: '100vh', maxWidth: '75%', margin: '0 auto'}}>
-      <NavBar/>
-      <Map/>
-      <Stats />
-    </div>
+    <ModelProvider>
+      <div
+        className="App"
+        style={{ height: "100vh", maxWidth: "75%", margin: "0 auto" }}
+      >
+        <NavBar />
+        <Form />
+      </div>
+    </ModelProvider>
   );
 }
 
