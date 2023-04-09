@@ -89,11 +89,14 @@ def predictVotingSoft():
 @app.route("/spatialquery", methods=["GET", "POST"])
 def getCoordinates():
     json_ = request.json
+    json_ = json.dumps(json_)
+    print(json_)
     # load data from json_
     polyjson = json.loads(json_)
     polygon =  gpd.GeoDataFrame.from_features(polyjson, crs='EPSG:4326')
-    polygon = polygon.to_crs('EPSG:4326')     
+    polygon = polygon.to_crs('EPSG:4326')
     points = raw_data.apply(lambda row: Point(row['LONGITUDE'], row['LATITUDE']), axis=1)
+    
     gdf = gpd.GeoDataFrame(raw_data, geometry=points, crs='EPSG:4326')
     contains = gdf.within(polygon.geometry.iloc[0])
     result_points = raw_data[contains][['INDEX_','LONGITUDE','LATITUDE']].to_json(orient='records')
