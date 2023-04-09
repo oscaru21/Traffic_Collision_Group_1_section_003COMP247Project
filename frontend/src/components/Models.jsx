@@ -9,7 +9,7 @@ export default function Models() {
   const {location, num_attribs, cat_attribs, binary_columns} = useContext(ModelContext);
 
   const handleSubmit = async (callback) => {
-    const res = await callback({...location, ...num_attribs, ...cat_attribs, ...binary_columns});
+    const res = await callback([{...location, ...num_attribs, ...cat_attribs, ...binary_columns}]);
     setResult(res);
   };
 
