@@ -1,3 +1,4 @@
+import json
 import sys
 from flask import Flask, request, jsonify
 import traceback
@@ -87,7 +88,7 @@ def predictVotingSoft():
 
 @app.route("/spatialquery", methods=["GET", "POST"])
 def getCoordinates():
-    print(json_)
+    json_ = request.json
     # load data from json_
     polyjson = json.loads(json_)
     polygon =  gpd.GeoDataFrame.from_features(polyjson, crs='EPSG:4326')
