@@ -30,14 +30,14 @@ export const predictAda = async (body) => {
   return response.data.prediction;
 };
 
-export const predictVotingHard = async (body) => {
-  console.log(body)
-  const response = await model.post("/predict/vote_hard", body);
-  return response.data.prediction;
-};
+// export const predictVotingHard = async (body) => {
+//   console.log(body)
+//   const response = await model.post("/predict/vote_hard", body);
+//   return response.data.prediction;
+// };
 
-export const predictVotingSoft = async (body) => {
-  console.log(body)
-  const response = await model.post("/predict/vote_soft", body);
-  return response.data.prediction;
-};
+// export const predictVotingSoft = async (body) => {
+//   console.log(body)
+//   const response = await model.post("/predict/vote_soft", body);
+//   return response.data.prediction;
+// };

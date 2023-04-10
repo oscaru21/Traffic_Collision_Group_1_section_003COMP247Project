@@ -1,6 +1,6 @@
 import React, { useContext, useState } from 'react';
 import Button from '@mui/material/Button';
-import { predictAda, predictKNN, predictRF, predictSVC, predictVotingHard, predictVotingSoft } from '../context/ModelActions';
+import { predictAda, predictKNN, predictRF, predictSVC } from '../context/ModelActions';
 import { Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, Stack } from '@mui/material';
 import ModelContext from '../context/ModelContext';
 
