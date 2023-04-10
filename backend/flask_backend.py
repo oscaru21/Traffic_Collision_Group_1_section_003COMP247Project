@@ -6,7 +6,7 @@ import joblib
 import numpy as np
 import pandas as pd
 from flask_cors import CORS
-import geopandas as gpd
+# import geopandas as gpd
 from shapely.geometry import Polygon, Point
 
 from pipelines.DataPipeline import DataPipeline
@@ -88,26 +88,26 @@ def predictVotingSoft():
     result = predict(json_, voting_soft_clf)
     return result
 
-@app.route("/spatialquery", methods=["GET", "POST"])
-def getCoordinates():
-    json_ = request.json
-    json_ = json.dumps(json_)
-    print(json_)
-    # load data from json_
-    polyjson = json.loads(json_)
-    polygon =  gpd.GeoDataFrame.from_features(polyjson, crs='EPSG:4326')
-    polygon = polygon.to_crs('EPSG:4326')
-    points = raw_data.apply(lambda row: Point(row['LONGITUDE'], row['LATITUDE']), axis=1)
+# @app.route("/spatialquery", methods=["GET", "POST"])
+# def getCoordinates():
+#     json_ = request.json
+#     json_ = json.dumps(json_)
+#     print(json_)
+#     # load data from json_
+#     polyjson = json.loads(json_)
+#     polygon =  gpd.GeoDataFrame.from_features(polyjson, crs='EPSG:4326')
+#     polygon = polygon.to_crs('EPSG:4326')
+#     points = raw_data.apply(lambda row: Point(row['LONGITUDE'], row['LATITUDE']), axis=1)
     
-    gdf = gpd.GeoDataFrame(raw_data, geometry=points, crs='EPSG:4326')
-    contains = gdf.within(polygon.geometry.iloc[0])
-    result_points = raw_data[contains][['INDEX_','LONGITUDE','LATITUDE']].to_json(orient='records')
-    return result_points
+#     gdf = gpd.GeoDataFrame(raw_data, geometry=points, crs='EPSG:4326')
+#     contains = gdf.within(polygon.geometry.iloc[0])
+#     result_points = raw_data[contains][['INDEX_','LONGITUDE','LATITUDE']].to_json(orient='records')
+#     return result_points
 
-try:
-    port = int(sys.argv[1])  # This is for a command-line input
-except:
-    port = 12345  # If you don't provide any port the port will be set to 12345
+# try:
+#     port = int(sys.argv[1])  # This is for a command-line input
+# except:
+#     port = 12345  # If you don't provide any port the port will be set to 12345
     
 
 datapipeline = joblib.load("../models/datapipeline.pkl")
