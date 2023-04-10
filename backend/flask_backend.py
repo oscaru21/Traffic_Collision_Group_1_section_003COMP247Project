@@ -104,10 +104,10 @@ def predictVotingSoft():
 #     result_points = raw_data[contains][['INDEX_','LONGITUDE','LATITUDE']].to_json(orient='records')
 #     return result_points
 
-try:
-    port = int(sys.argv[1])  # This is for a command-line input
-except:
-    port = 12345  # If you don't provide any port the port will be set to 12345
+# try:
+#     port = int(sys.argv[1])  # This is for a command-line input
+# except:
+#     port = 12345  # If you don't provide any port the port will be set to 12345
     
 
 datapipeline = joblib.load("../models/datapipeline.pkl")
@@ -120,5 +120,5 @@ voting_soft_clf = joblib.load("../models/best_model_voting_soft.pkl")
 raw_data = pd.read_csv("../data/raw/KSI.csv")
 
 
-print("Model loaded")
-app.run(port=port)
+# print("Model loaded")
+# app.run(port=port)
