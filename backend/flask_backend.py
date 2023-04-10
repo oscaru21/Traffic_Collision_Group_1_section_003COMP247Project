@@ -7,7 +7,7 @@ import numpy as np
 import pandas as pd
 from flask_cors import CORS
 # import geopandas as gpd
-from shapely.geometry import Polygon, Point
+# from shapely.geometry import Polygon, Point
 
 from pipelines.DataPipeline import DataPipeline
 from utils.Common import Config
@@ -104,10 +104,10 @@ def predictVotingSoft():
 #     result_points = raw_data[contains][['INDEX_','LONGITUDE','LATITUDE']].to_json(orient='records')
 #     return result_points
 
-# try:
-#     port = int(sys.argv[1])  # This is for a command-line input
-# except:
-#     port = 12345  # If you don't provide any port the port will be set to 12345
+try:
+    port = int(sys.argv[1])  # This is for a command-line input
+except:
+    port = 12345  # If you don't provide any port the port will be set to 12345
     
 
 datapipeline = joblib.load("../models/datapipeline.pkl")
