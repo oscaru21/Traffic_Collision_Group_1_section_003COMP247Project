@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const URL = "http://localhost:12345";
+const URL = "https://supervisedlearninge2e.onrender.com/";
 
 const model = axios.create({
   baseURL: URL,
