@@ -29,8 +29,8 @@ export default function Models() {
       <Button fullWidth variant="contained" onClick={() => handleSubmit(predictRF)}>RF</Button>
       <Button fullWidth variant="contained" onClick={() => handleSubmit(predictKNN)}>KNN</Button>
       <Button fullWidth variant="contained" onClick={() => handleSubmit(predictAda)}>Ada</Button>
-      <Button fullWidth variant="contained" onClick={() => handleSubmit(predictVotingHard)}>Voting Hard</Button>
-      <Button fullWidth variant="contained" onClick={() => handleSubmit(predictVotingSoft)}>Voting Soft</Button>
+      {/* <Button fullWidth variant="contained" onClick={() => handleSubmit(predictVotingHard)}>Voting Hard</Button>
+      <Button fullWidth variant="contained" onClick={() => handleSubmit(predictVotingSoft)}>Voting Soft</Button> */}
       <Dialog open={result !== null} onClose={handleClose}>
         <DialogTitle>Prediction</DialogTitle>
         <DialogContent>

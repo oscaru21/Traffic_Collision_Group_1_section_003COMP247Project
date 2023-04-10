@@ -18,7 +18,8 @@ const Numerical = () => {
 
   const handleDayChange = (date) => {
     setValue(date)
-    setFormState({ ...formState, DAY: Number(date.date())  });
+    setFormState({ ...formState, DAY: Number(date.day())  });
+    setFormState({ ...formState, YEAR: Number(date.year())  });
   }
 
   const handleTimeChange = (event) => {
@@ -38,7 +39,7 @@ const Numerical = () => {
         <LocalizationProvider dateAdapter={AdapterDayjs}>
           <DatePicker
             label={'"month" and "day"'}
-            views={["day", "month"]}
+            views={["day", "month", "year"]}
             value={value}
             onMonthChange={handleMonthChange}
             onChange={handleDayChange}
