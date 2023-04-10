@@ -6,12 +6,12 @@ import joblib
 import numpy as np
 import pandas as pd
 from flask_cors import CORS
+import geopandas as gpd
+from shapely.geometry import Polygon, Point
 
 from pipelines.DataPipeline import DataPipeline
 from utils.Common import Config
 
-import geopandas as gpd
-from shapely.geometry import Polygon, Point
 
 app = Flask(__name__)
 CORS(app)
